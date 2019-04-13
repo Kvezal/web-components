@@ -12,25 +12,32 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface KvSideDrawer {}
+  interface KvSideDrawerAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-
+    'KvSideDrawer': Components.KvSideDrawer;
   }
 
   interface StencilIntrinsicElements {
-
+    'kv-side-drawer': Components.KvSideDrawerAttributes;
   }
 
 
+  interface HTMLKvSideDrawerElement extends Components.KvSideDrawer, HTMLStencilElement {}
+  var HTMLKvSideDrawerElement: {
+    prototype: HTMLKvSideDrawerElement;
+    new (): HTMLKvSideDrawerElement;
+  };
 
   interface HTMLElementTagNameMap {
-
+    'kv-side-drawer': HTMLKvSideDrawerElement
   }
 
   interface ElementTagNameMap {
-
+    'kv-side-drawer': HTMLKvSideDrawerElement;
   }
 
 
