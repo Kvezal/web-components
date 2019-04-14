@@ -4,11 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
 
+    .side-nav ul {
+      list-style: none;
+    }
+
+    .side-nav li {
+      margin: 1rem 0;
+    }
+
+    .side-nav a {
+      text-decoration: none;
+      color: #613f00;
+    }
+
+    .side-drawer-button {
+      position: absolute;
+      z-index: 1000;
+
+      color: #ffffff;
+
+      background-color: #000000;
+    }
+  </style>
+  <script src="/build/mycomponent.js"></script>
 </head>
 <body>
-  <kv-side-drawer></kv-side-drawer>
+  <button class="side-drawer-button">Toggle side menu</button>
 
+  <kv-side-drawer title="Main menu">
+    <nav class="side-nav">
+      <ul>
+        <li><a href="/">A Link</a></li>
+        <li><a href="/">Another Link</a></li>
+        <li><a href="/">A third Link</a></li>
+      </ul>
+    </nav>
+  </kv-side-drawer>
+
+  <script>
+    const sideDrawer = document.querySelector('kv-side-drawer');
+    const sideDrawerBtn = document.querySelector('.side-drawer-button');
+    sideDrawerBtn.addEventListener('click', () => {
+      console.log(sideDrawer);
+      sideDrawer.open();
+    });
+  </script>
 </body>
 </html>

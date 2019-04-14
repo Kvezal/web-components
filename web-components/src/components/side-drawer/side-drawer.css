@@ -1,0 +1,120 @@
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  width: 30rem;
+  height: 100vh;
+  max-width: 80%;
+
+  background: #f3f3f3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
+
+  transition: all .3s ease-out;
+  transform: translateX(-100%);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  height: 100vh;
+
+  opacity: 0;
+  pointer-events: none;
+
+  background-color: rgba(0, 0, 0, .75);
+
+  transition: opacity .5s ease-out;
+}
+
+:host([opened]) .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+aside button:focus {
+  outline: none;
+}
+
+:host([opened]) aside {
+  transform: translateX(0);
+}
+
+:host([opened]) .btn-open {
+  display: none;
+}
+
+header {
+  position: relative;
+
+  padding: 1rem;
+
+  background-color: #000000;
+}
+
+header h1 {
+  margin: 0;
+
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+
+  padding: 1rem;
+
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.btn-open {
+  position: absolute;
+  top: 50%;
+  right: -49px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.tabs button {
+  width: 30%;
+  padding: .15rem 0;
+  border: 1px solid #000000;
+
+  color: #000000;
+  font: inherit;
+  text-align: center;
+
+  background-color: #ffffff;
+
+  transition: all .3s ease-out;
+}
+
+.tabs .active,
+.tabs button:hover,
+.tabs button:active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.contact-information {
+  padding: 0 1rem;
+}

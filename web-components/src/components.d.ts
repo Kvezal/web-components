@@ -12,8 +12,15 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface KvSideDrawer {}
-  interface KvSideDrawerAttributes extends StencilHTMLAttributes {}
+  interface KvSideDrawer {
+    'open': () => void;
+    'opened': boolean;
+    'title': string;
+  }
+  interface KvSideDrawerAttributes extends StencilHTMLAttributes {
+    'opened'?: boolean;
+    'title'?: string;
+  }
 }
 
 declare global {
