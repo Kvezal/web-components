@@ -21,15 +21,26 @@ export namespace Components {
     'opened'?: boolean;
     'title'?: string;
   }
+
+  interface KvTooltip {
+    'opened': boolean;
+    'text': string;
+  }
+  interface KvTooltipAttributes extends StencilHTMLAttributes {
+    'opened'?: boolean;
+    'text'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'KvSideDrawer': Components.KvSideDrawer;
+    'KvTooltip': Components.KvTooltip;
   }
 
   interface StencilIntrinsicElements {
     'kv-side-drawer': Components.KvSideDrawerAttributes;
+    'kv-tooltip': Components.KvTooltipAttributes;
   }
 
 
@@ -39,12 +50,20 @@ declare global {
     new (): HTMLKvSideDrawerElement;
   };
 
+  interface HTMLKvTooltipElement extends Components.KvTooltip, HTMLStencilElement {}
+  var HTMLKvTooltipElement: {
+    prototype: HTMLKvTooltipElement;
+    new (): HTMLKvTooltipElement;
+  };
+
   interface HTMLElementTagNameMap {
     'kv-side-drawer': HTMLKvSideDrawerElement
+    'kv-tooltip': HTMLKvTooltipElement
   }
 
   interface ElementTagNameMap {
     'kv-side-drawer': HTMLKvSideDrawerElement;
+    'kv-tooltip': HTMLKvTooltipElement;
   }
 
 
