@@ -1,0 +1,31 @@
+:host {
+  position: relative;
+}
+
+.tooltip__container {
+  position: absolute;
+  top: 1.5rem;
+  left: 0.75rem;
+  z-index: 10;
+
+  padding: 0.15rem;
+  border-radius: 3px;
+
+  color: white;
+  font-weight: normal;
+
+  background-color: black;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.26);
+}
+
+.tooltip__icon {
+  padding: 0.15rem 0.5rem;
+  margin-left: 5px;
+  border-radius: 50%;
+
+  color: white;
+  text-align: center;
+
+  background: black;
+  cursor: pointer;
+}
