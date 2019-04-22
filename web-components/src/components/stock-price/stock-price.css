@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  width: 20rem;
+  max-width: 100%;
+  padding: 1rem;
+  margin: 2rem;
+  border: 2px solid #420042;
+
+  font-family: sans-serif;
+}
+
+.kv-stock-price__form {
+
+}
+
+.kv-stock-price__input {
+  display: block;
+  padding: 0.15rem .25rem;
+  margin-bottom: .5rem;
+
+  font: inherit;
+  text-color: #420042;
+}
+
+.kv-stock-price__input:focus,
+.kv-stock-price__button:focus {
+  outline: none;
+}
+
+.kv-stock-price__button {
+  padding: .25rem .5rem;
+  border: 1px solid #420042;
+
+  color: #ffffff;
+  font: inherit;
+
+  background-color: #420042;
+}
+
+.kv-stock-price__button:hover,
+.kv-stock-price__button:active {
+  background-color: #750175;
+  border-color: #750175;
+}
+
+.kv-stock-price__button:disabled {
+  color: #ffffff;
+
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.kv-stock-price__price {
+
+}

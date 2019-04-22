@@ -22,6 +22,13 @@ export namespace Components {
     'title'?: string;
   }
 
+  interface KvStockPrice {
+    'stockSymbol': string;
+  }
+  interface KvStockPriceAttributes extends StencilHTMLAttributes {
+    'stockSymbol'?: string;
+  }
+
   interface KvTooltip {
     'opened': boolean;
     'text': string;
@@ -35,11 +42,13 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'KvSideDrawer': Components.KvSideDrawer;
+    'KvStockPrice': Components.KvStockPrice;
     'KvTooltip': Components.KvTooltip;
   }
 
   interface StencilIntrinsicElements {
     'kv-side-drawer': Components.KvSideDrawerAttributes;
+    'kv-stock-price': Components.KvStockPriceAttributes;
     'kv-tooltip': Components.KvTooltipAttributes;
   }
 
@@ -50,6 +59,12 @@ declare global {
     new (): HTMLKvSideDrawerElement;
   };
 
+  interface HTMLKvStockPriceElement extends Components.KvStockPrice, HTMLStencilElement {}
+  var HTMLKvStockPriceElement: {
+    prototype: HTMLKvStockPriceElement;
+    new (): HTMLKvStockPriceElement;
+  };
+
   interface HTMLKvTooltipElement extends Components.KvTooltip, HTMLStencilElement {}
   var HTMLKvTooltipElement: {
     prototype: HTMLKvTooltipElement;
@@ -58,11 +73,13 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'kv-side-drawer': HTMLKvSideDrawerElement
+    'kv-stock-price': HTMLKvStockPriceElement
     'kv-tooltip': HTMLKvTooltipElement
   }
 
   interface ElementTagNameMap {
     'kv-side-drawer': HTMLKvSideDrawerElement;
+    'kv-stock-price': HTMLKvStockPriceElement;
     'kv-tooltip': HTMLKvTooltipElement;
   }
 
